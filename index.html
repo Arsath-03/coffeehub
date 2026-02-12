@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Hub</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/style.css">
+
+    <link rel="icon" href="src/images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body class="font-[Inter] bg-[#fdfaf7] text-gray-800">
+
+
+    <div class="bg-[#eca965] text-[#3A2416] text-center py-2 text-sm font-semibold">
+        🎉 First Order Offer: Flat 20% OFF | Valid This Week Only
+    </div>
+
+
+    <header class="bg-[#3A2416] text-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#">
+                <h1 class="font-[Pacifico] text-3xl">☕ Coffee Hub</h1>
+            </a>
+            <nav class="hidden md:flex gap-8 font-medium">
+                <a href="#home" class="hover:text-[#eca965]">Home</a>
+                <a href="#about" class="hover:text-[#eca965]">About</a>
+                <a href="#menu" class="hover:text-[#eca965]">Menu</a>
+                <a href="#gallery" class="hover:text-[#eca965]">Gallery</a>
+                <a href="#contact" class="hover:text-[#eca965]">Contact</a>
+            </nav>
+
+            <button class="bg-[#eca965] text-[#3A2416] px-4 py-2 rounded-md hover:bg-[#dd9365]">
+                Visit Us
+            </button>
+        </div>
+    </header>
+
+
+    <section id="home" class="relative">
+        <img src="src/images/bg-image.jpg" class="w-full h-[700px] object-cover" decoding="async">
+        <div class="absolute inset-0 bg-black/50 flex items-center">
+            <div class="max-w-5xl mx-auto text-center text-white px-6">
+                <h2 class="font-[Poppins] text-5xl font-bold mb-4 fade-in">
+                    Coffee That Feels Like Home ☕
+                </h2>
+                <p class="text-lg mb-8 opacity-90">
+                    Premium beans • Expert brewing • Cozy ambience
+                </p>
+
+                <div class="flex justify-center gap-4">
+                    <button class="cta-animated">
+                        <i class="fa-solid fa-mug-hot"></i> Order Coffee
+                    </button>
+                    <button class="border px-6 py-3 rounded-md hover:bg-white/20">
+                        Book a Table
+                    </button>
+                </div>
+
+
+                <div class="flex justify-center gap-8 mt-10 text-sm opacity-90">
+                    <p>⭐ 4.9 Rating</p>
+                    <p>❤️ 1000+ Customers</p>
+                    <p>☕ Premium Beans</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="py-20 bg-[#7c401b]/10">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="font-[Poppins] text-3xl font-semibold mb-4">About Coffee Hub</h3>
+                <p class="mb-4">
+                    Coffee Hub is a neighborhood café built for coffee lovers who value quality,
+                    comfort, and consistency. Every cup is crafted with care.
+                </p>
+                <ul class="space-y-2">
+                    <li>☕ Hand-picked premium coffee beans</li>
+                    <li>🏡 Calm & productive ambience</li>
+                    <li>😊 Friendly staff & fast service</li>
+                </ul>
+            </div>
+            <img src="src/images/about-image.jpg" class="rounded-xl shadow-lg hover:scale-[1.02] transition"
+                loading="lazy" decoding="async">
+        </div>
+    </section>
+
+
+    <section class="py-20 bg-[#3A2416]/10">
+        <h3 class="font-[Poppins] text-3xl text-center font-semibold mb-12">Why Coffee Hub?</h3>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div class="marketing-card">
+                <h4>☕ Premium Quality</h4>
+                <p>Carefully selected beans roasted to perfection.</p>
+            </div>
+            <div class="marketing-card">
+                <h4>🏡 Cozy Experience</h4>
+                <p>Designed for work, relaxation & conversations.</p>
+            </div>
+            <div class="marketing-card">
+                <h4>❤️ Customer Favorite</h4>
+                <p>Trusted & loved by coffee enthusiasts.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="menu" class="py-20 bg-[#7c401b]/20">
+        <h3 class="font-[Poppins] text-3xl text-center font-semibold mb-12">Popular Choices</h3>
+
+        <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="menu-card">
+                <img src="src/images/classic espresso.jpg" loading="lazy" decoding="async">
+                <h4>Classic Espresso</h4>
+                <p>Bold & Intense</p>
+                <span>₹180</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="src/images/creamy latte.jpg" loading="lazy" decoding="async">
+                <h4>Creamy Latte</h4>
+                <p>Smooth & Milky</p>
+                <span>₹210</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="src/images/chocolate macho.jpg" loading="lazy" decoding="async">
+                <h4>Chocolate Macho</h4>
+                <p>Rich & Chocolatey</p>
+                <span>₹190</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="src/images/iced coffee.jpg" loading="lazy" decoding="async">
+                <h4>Iced Coffee</h4>
+                <p>Cool & Refreshing</p>
+                <span>₹150</span>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="relative bg-[#3A2416] text-white py-24 overflow-hidden">
+
+
+        <div class="absolute -left-20 top-20 w-64 h-64 bg-[#eca965]/20 rounded-full blur-3xl"></div>
+        <div class="absolute -right-20 bottom-10 w-72 h-72 bg-[#eca965]/20 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 items-center relative z-10">
+
+
+            <div class="space-y-5 text-center md:text-left">
+                <p class="uppercase tracking-widest text-sm text-[#eca965]">
+                    Limited Time Offer
+                </p>
+
+                <h3 class="font-[Poppins] text-3xl font-semibold">
+                    First Order Special 🎉
+                </h3>
+
+                <p class="text-sm opacity-90">
+                    We’re welcoming new customers with an exclusive deal.
+                    Experience premium coffee at a special price.
+                </p>
+
+
+                <ul class="space-y-2 text-sm">
+                    <li>✅ Flat 20% OFF on first order</li>
+                    <li>✅ Dine-in & Takeaway available</li>
+                    <li>✅ Valid for this week only</li>
+                </ul>
+
+
+                <div class="flex justify-center md:justify-start gap-3 pt-3">
+                    <img src="src/images/classic espresso.jpg"
+                        class="w-14 h-14 rounded-lg object-cover border border-white/20" loading="lazy"
+                        decoding="async">
+                    <img src="src/images/creamy latte.jpg"
+                        class="w-14 h-14 rounded-lg object-cover border border-white/20" loading="lazy"
+                        decoding="async">
+                    <img src="src/images/iced coffee.jpg"
+                        class="w-14 h-14 rounded-lg object-cover border border-white/20" loading="lazy"
+                        decoding="async">
+                </div>
+            </div>
+
+
+            <div class="text-center space-y-6">
+
+                <div class="inline-block bg-[#eca965] text-[#3A2416] px-6 py-3 rounded-full text-2xl font-bold pulse">
+                    20% OFF
+                </div>
+
+                <h2 class="font-[Poppins] text-4xl">
+                    Coffee Lovers Deal ☕
+                </h2>
+
+                <p class="opacity-90">
+                    On your first dine-in or takeaway order
+                </p>
+
+                <button class="cta-animated text-lg">
+                    Order Now
+                </button>
+
+
+                <p class="text-xs opacity-80">
+                    ⏰ Hurry! Offer ends soon
+                </p>
+            </div>
+
+
+            <div class="space-y-5 text-center md:text-right">
+                <img src="src/images/chocolate macho.jpg"
+                    class="w-56 mx-auto md:ml-auto rounded-xl shadow-lg hover:scale-[1.05] transition" loading="lazy"
+                    decoding="async">
+
+                <div>
+                    <p class="text-sm opacity-90">
+                        Loved by 1000+ happy customers ❤️
+                    </p>
+                    <p class="text-yellow-400 text-sm">
+                        ★★★★★ Rated Café
+                    </p>
+                </div>
+
+
+                <div class="flex justify-center md:justify-end gap-4 text-xs opacity-80">
+                    <span>☕ Premium Beans</span>
+                    <span>🏆 Top Rated</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="py-20 bg-[#7c401b]/20">
+        <div class="max-w-7xl mx-auto px-6">
+
+
+            <div class="text-center mb-14">
+                <h3 class="font-[Poppins] text-3xl font-semibold mb-3">
+                    What Our Customers Say
+                </h3>
+                <p class="text-gray-700">
+                    Real experiences from our happy coffee lovers ☕
+                </p>
+            </div>
+
+
+            <div class="grid md:grid-cols-3 gap-8 font-[Inter]">
+
+
+                <div class="bg-white p-6 rounded-xl shadow-lg
+                        hover:-translate-y-2 hover:shadow-2xl
+                        transition duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="src/images/customer.png" class="w-14 h-14 rounded-full object-cover" loading="lazy"
+                            decoding="async">
+                        <div>
+                            <h4 class="font-semibold">Karthik M.</h4>
+                            <p class="text-sm text-gray-500">Regular Customer</p>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-700 mb-4">
+                        “Absolutely love the ambience and the coffee quality.
+                        A perfect place to relax after work.”
+                    </p>
+
+                    <div class="text-yellow-500">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+
+                <div class="bg-white p-6 rounded-xl shadow-lg
+                        hover:-translate-y-2 hover:shadow-2xl
+                        transition duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="src/images/customer.png" class="w-14 h-14 rounded-full object-cover" loading="lazy"
+                            decoding="async">
+                        <div>
+                            <h4 class="font-semibold">Arsath A</h4>
+                            <p class="text-sm text-gray-500">Student</p>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-700 mb-4">
+                        “Coffee Hub is my go-to place for studying.
+                        The iced coffee is super refreshing!”
+                    </p>
+
+                    <div class="text-yellow-500">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+
+                <div class="bg-white p-6 rounded-xl shadow-lg
+                        hover:-translate-y-2 hover:shadow-2xl
+                        transition duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="src/images/customer.png" class="w-14 h-14 rounded-full object-cover" loading="lazy"
+                            decoding="async">
+                        <div>
+                            <h4 class="font-semibold">Rahul S.</h4>
+                            <p class="text-sm text-gray-500">Coffee Enthusiast</p>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-700 mb-4">
+                        “Great service, premium coffee, and very friendly staff.
+                        Highly recommended for coffee lovers.”
+                    </p>
+
+                    <div class="text-yellow-500">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="text-center mt-12">
+                <p class="text-lg font-medium">
+                    ⭐ 4.9/5 Average Rating
+                </p>
+                <p class="text-sm text-gray-600">
+                    Based on 1000+ customer reviews
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section id="gallery" class="py-20 bg-[#7c401b]/20">
+        <h3 class="font-[Poppins] text-3xl text-center font-semibold mb-10">
+            Coffee Hub Through the Lens
+        </h3>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+            <img src="src/images/gallery1.jpg" class="gallery-img" loading="lazy" decoding="async">
+            <img src="src/images/gallery2.jpg" class="gallery-img" loading="lazy" decoding="async">
+            <img src="src/images/gallery3.jpg" class="gallery-img" loading="lazy" decoding="async">
+        </div>
+    </section>
+
+
+    <section class="py-20 bg-[#7c401b]/30">
+        <h3 class="font-[Poppins] text-3xl text-center mb-4">Stay Connected ☕</h3>
+        <p class="text-center mb-6">Subscribe for offers & updates</p>
+
+        <div class="flex justify-center">
+            <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-l-md outline-none">
+            <button class="cta-animated rounded-l-none">Subscribe</button>
+        </div>
+    </section>
+
+
+
+
+
+    <footer class="bg-[#3A2416] text-white py-10">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid md:grid-cols-4 gap-8 items-center text-center md:text-left">
+
+
+                <div>
+                    <a href="#">
+                        <h4 class="font-[Pacifico] text-2xl mb-2">☕ Coffee Hub</h4>
+                    </a>
+                    <p class="text-sm opacity-80">
+                        Made for true coffee lovers. Brewed with passion.
+                    </p>
+                </div>
+
+
+                <div>
+                    <h4 class="font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-1 text-sm opacity-90">
+                        <li><a href="#home" class="hover:text-[#eca965]">Home</a></li>
+                        <li><a href="#menu" class="hover:text-[#eca965]">Menu</a></li>
+                        <li><a href="#gallery" class="hover:text-[#eca965]">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-[#eca965]">Contact</a></li>
+                    </ul>
+                </div>
+
+
+
+                <div>
+                    <h4 class="font-semibold mb-3">Contact</h4>
+                    <ul class=" flex flex-col space-y-2 text-sm opacity-90">
+                        <a href="tel:+917010160220" >
+                            <li class="flex items-center justify-center md:justify-start gap-2">
+                                <i class="fa-solid fa-phone text-[#eca965]"></i>
+                                +91 7010160220
+                            </li>
+                        </a>
+                        <a href="mailto:arsathnoor2005@gmail.com" >
+                            <li class="flex items-center justify-center md:justify-start gap-2">
+                                <i class="fa-solid fa-envelope text-[#eca965]"></i>
+                                coffeehub@gmail.com
+                            </li>
+                        </a>
+                        <a href="#">
+                            <li class="flex items-center justify-center md:justify-start gap-2">
+                                <i class="fa-solid fa-location-dot text-[#eca965]"></i>
+                                Palayamkottai,Tirunelveli
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+
+
+                <div>
+                    <h4 class="font-semibold mb-3">Follow Us On</h4>
+
+                    <div class="flex justify-center md:justify-start gap-4 text-xl">
+                        <a href="https://www.youtube.com" target="_blank" class="hover:text-red-500 transition">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                        <a href="https://www.facebook.com" target="_blank" class="hover:text-blue-500 transition">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/__arsath_03__/" target="_blank"
+                            class="hover:text-pink-500 transition">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+
+                    <p class="text-sm opacity-80 mt-3">
+                        Stay connected with us
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="text-center text-sm opacity-70 mt-8 border-t border-white/20 pt-4">
+                © 2026 Coffee Hub
+            </div>
+
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
