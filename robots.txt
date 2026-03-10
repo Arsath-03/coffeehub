@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://arsath-03.github.io/coffeehub/sitemap.xml
+
+Sitemap: https://coffeehub-rho.vercel.app/sitemap.xml
