@@ -1,22 +1,22 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Coffee Hub | Best Coffee Shop in Tirunelveli</title>
-
     <meta
       name="description"
       content="Coffee Hub is a premium coffee shop in Tirunelveli offering espresso, latte, iced coffee and cozy ambience for coffee lovers."
     />
-
     <meta
       name="keywords"
       content="Coffee Hub, coffee shop Tirunelveli, best coffee in Tirunelveli, espresso, latte, iced coffee"
     />
-
     <meta name="author" content="Coffee Hub" />
-
     <meta name="robots" content="index, follow" />
-
     <meta
       property="og:title"
       content="Coffee Hub - Premium Coffee Experience"
@@ -27,56 +27,328 @@
     />
     <meta property="og:image" content="src/images/bg-image.jpg" />
     <meta property="og:type" content="website" />
-
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="src/style.css" />
-
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <link rel="canonical" href="https://coffeehub-rho.vercel.app/" />
-
-    <link rel="icon" href="src/images/favicon.ico">
+    <link rel="icon" href="src/images/favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&family=Pacifico&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "CafeOrCoffeeShop",
-        "name": "Coffee Hub",
-        "image": "https://coffeehub-rho.vercel.app/src/images/bg-image.jpg",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Palayamkottai",
-          "addressLocality": "Tirunelveli",
-          "addressCountry": "India"
-        },
-        "telephone": "+91 7010160220"
+    <style>
+      .cta-animated {
+        background-color: #eca965;
+        color: #3a2416;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        border: none;
+        cursor: pointer;
       }
-    </script>
+      .cta-animated:hover {
+        background-color: #dd9365;
+        transform: scale(1.02);
+      }
+      .marketing-card {
+        background: white;
+        padding: 2rem 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        text-align: left;
+      }
+      .marketing-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+      }
+      .marketing-card h4 {
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: #3a2416;
+      }
+      .menu-card {
+        background: white;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.25s ease;
+        text-align: center;
+        padding-bottom: 1rem;
+      }
+      .menu-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+      }
+      .menu-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .menu-card h4 {
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-top: 0.8rem;
+        color: #3a2416;
+      }
+      .menu-card p {
+        color: #6b4c3b;
+        font-size: 0.85rem;
+      }
+      .menu-card span {
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-weight: 700;
+        background: #f5e7de;
+        padding: 0.2rem 1rem;
+        border-radius: 30px;
+        color: #7c401b;
+      }
+      .gallery-img {
+        border-radius: 1rem;
+        transition: transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        height: auto;
+      }
+      .gallery-img:hover {
+        transform: scale(1.02);
+      }
+      .pulse {
+        animation: pulse 1.5s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.9;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .fade-in {
+        animation: fadeIn 0.6s ease-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .toast-message {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #3a2416;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        z-index: 1000;
+        animation: slideIn 0.3s ease-out;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      .toast-message.success {
+        background: #10b981;
+      }
+      .toast-message.error {
+        background: #ef4444;
+      }
+      @keyframes slideIn {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      @media (max-width: 768px) {
+        header > div {
+          flex-wrap: wrap;
+          gap: 12px;
+          justify-content: center !important;
+          text-align: center;
+          padding: 12px 16px !important;
+        }
+        header h1 {
+          font-size: 1.75rem !important;
+        }
+        header button {
+          padding: 8px 16px !important;
+          font-size: 0.85rem;
+        }
+        #home h2 {
+          font-size: 2rem !important;
+          padding: 0 12px;
+        }
+        #home .absolute div p {
+          font-size: 1rem !important;
+          padding: 0 12px;
+        }
+        #home .flex.gap-4 {
+          flex-direction: column;
+          align-items: center;
+          gap: 12px !important;
+        }
+        #home .flex.gap-8 {
+          gap: 16px !important;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        #home .absolute .max-w-5xl {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        #home img {
+          height: 550px !important;
+          object-position: 60% center;
+        }
+        #about .grid {
+          gap: 28px !important;
+          text-align: center;
+        }
+        #about img {
+          max-width: 90%;
+          margin: 0 auto;
+        }
+        #about ul {
+          text-align: center;
+        }
+        #about ul li {
+          text-align: left;
+          display: inline-block;
+          width: auto;
+        }
+        .marketing-card {
+          text-align: center;
+          padding: 24px 16px !important;
+        }
+        #menu .grid {
+          gap: 24px !important;
+        }
+        .menu-card {
+          max-width: 280px;
+          margin: 0 auto;
+          width: 100%;
+        }
+        .menu-card img {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 1 / 0.9;
+          object-fit: cover;
+        }
+        .grid.md\:grid-cols-3 {
+          gap: 24px !important;
+        }
+        .bg-white.p-6 {
+          margin: 0 8px;
+        }
+        #gallery .grid {
+          gap: 20px !important;
+        }
+        .gallery-img {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 4 / 3;
+          object-fit: cover;
+          border-radius: 1rem;
+        }
+        .flex.justify-center input {
+          width: 60%;
+          font-size: 0.9rem;
+        }
+        .flex.justify-center button {
+          white-space: nowrap;
+          padding: 8px 18px;
+        }
+        footer .grid {
+          gap: 32px !important;
+          text-align: center;
+        }
+        footer .flex.justify-center.md\:justify-start {
+          justify-content: center !important;
+        }
+        footer ul li a,
+        footer ul li {
+          justify-content: center !important;
+        }
+        footer .flex.gap-4 {
+          justify-content: center;
+        }
+      }
+      @media (max-width: 480px) {
+        header h1 {
+          font-size: 1.5rem !important;
+        }
+        #home h2 {
+          font-size: 1.75rem !important;
+        }
+        #home .absolute div p {
+          font-size: 0.9rem !important;
+        }
+        .cta-animated,
+        .border.px-6.py-3 {
+          padding: 10px 20px !important;
+          font-size: 0.9rem;
+        }
+        .marketing-card h4 {
+          font-size: 1.25rem;
+        }
+        .menu-card h4 {
+          font-size: 1.1rem;
+        }
+        .menu-card span {
+          font-size: 1rem;
+        }
+        .flex.justify-center input {
+          width: 70%;
+        }
+      }
+    </style>
   </head>
-
   <body class="font-[Inter] bg-[#fdfaf7] text-gray-800">
     <div
       class="bg-[#eca965] text-[#3A2416] text-center py-2 text-sm font-semibold"
     >
       🎉 First Order Offer: Flat 20% OFF | Valid This Week Only
     </div>
-
     <header class="bg-[#3A2416] text-white sticky top-0 z-50">
       <div
         class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
       >
-        <a href="#">
-          <h1 class="font-[Pacifico] text-3xl">
+        <a href="#"
+          ><h1 class="font-[Pacifico] text-3xl">
             <i class="fa-brands fa-java text-[#eca965]"></i> Coffee Hub
-          </h1>
-        </a>
+          </h1></a
+        >
         <nav class="hidden md:flex gap-8 font-medium">
           <a href="#home" class="hover:text-[#eca965]">Home</a>
           <a href="#about" class="hover:text-[#eca965]">About</a>
@@ -84,7 +356,6 @@
           <a href="#gallery" class="hover:text-[#eca965]">Gallery</a>
           <a href="#contact" class="hover:text-[#eca965]">Contact</a>
         </nav>
-
         <button
           class="bg-[#eca965] text-[#3A2416] px-4 py-2 rounded-md hover:bg-[#dd9365]"
         >
@@ -92,7 +363,6 @@
         </button>
       </div>
     </header>
-
     <section id="home" class="relative">
       <img
         src="src/images/bg-image.jpg"
@@ -109,7 +379,6 @@
           <p class="text-lg mb-8 opacity-90">
             Premium beans • Expert brewing • Cozy ambience
           </p>
-
           <div class="flex justify-center gap-4">
             <button class="cta-animated">
               <i class="fa-solid fa-mug-hot"></i> Order Coffee
@@ -118,7 +387,6 @@
               Book a Table
             </button>
           </div>
-
           <div class="flex justify-center gap-8 mt-10 text-sm opacity-90">
             <p>⭐ 4.9 Rating</p>
             <p>❤️ 1000+ Customers</p>
@@ -127,13 +395,11 @@
         </div>
       </div>
     </section>
-
     <p style="display: none">
       Coffee Hub is a premium coffee shop in Tirunelveli offering espresso,
       latte, iced coffee, and cozy ambience for coffee lovers. Visit Coffee Hub
       for the best coffee experience.
     </p>
-
     <section id="about" class="py-20 bg-[#7c401b]/10">
       <div
         class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
@@ -161,12 +427,10 @@
         />
       </div>
     </section>
-
     <section class="py-20 bg-[#3A2416]/10">
       <h3 class="font-[Poppins] text-3xl text-center font-semibold mb-12">
         Why Coffee Hub?
       </h3>
-
       <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
         <div class="marketing-card">
           <h4>☕ Premium Quality</h4>
@@ -182,12 +446,10 @@
         </div>
       </div>
     </section>
-
     <section id="menu" class="py-20 bg-[#7c401b]/20">
       <h3 class="font-[Poppins] text-3xl text-center font-semibold mb-12">
         Popular Choices
       </h3>
-
       <div
         class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-4 gap-8"
       >
@@ -202,7 +464,6 @@
           <p>Bold & Intense</p>
           <span>₹180</span>
         </div>
-
         <div class="menu-card">
           <img
             src="src/images/creamy latte.jpg"
@@ -214,7 +475,6 @@
           <p>Smooth & Milky</p>
           <span>₹210</span>
         </div>
-
         <div class="menu-card">
           <img
             src="src/images/chocolate macho.jpg"
@@ -226,7 +486,6 @@
           <p>Rich & Chocolatey</p>
           <span>₹190</span>
         </div>
-
         <div class="menu-card">
           <img
             src="src/images/iced coffee.jpg"
@@ -240,7 +499,6 @@
         </div>
       </div>
     </section>
-
     <section class="relative bg-[#3A2416] text-white py-24 overflow-hidden">
       <div
         class="absolute -left-20 top-20 w-64 h-64 bg-[#eca965]/20 rounded-full blur-3xl"
@@ -248,7 +506,6 @@
       <div
         class="absolute -right-20 bottom-10 w-72 h-72 bg-[#eca965]/20 rounded-full blur-3xl"
       ></div>
-
       <div
         class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 items-center relative z-10"
       >
@@ -256,36 +513,30 @@
           <p class="uppercase tracking-widest text-sm text-[#eca965]">
             Limited Time Offer
           </p>
-
           <h3 class="font-[Poppins] text-3xl font-semibold">
             First Order Special 🎉
           </h3>
-
           <p class="text-sm opacity-90">
-            We’re welcoming new customers with an exclusive deal. Experience
+            We're welcoming new customers with an exclusive deal. Experience
             premium coffee at a special price.
           </p>
-
           <ul class="space-y-2 text-sm">
             <li>✅ Flat 20% OFF on first order</li>
             <li>✅ Dine-in & Takeaway available</li>
             <li>✅ Valid for this week only</li>
           </ul>
-
           <div class="flex justify-center md:justify-start gap-3 pt-3">
             <img
               src="src/images/classic espresso.jpg"
               class="w-14 h-14 rounded-lg object-cover border border-white/20"
               loading="lazy"
               decoding="async"
-            />
-            <img
+            /><img
               src="src/images/creamy latte.jpg"
               class="w-14 h-14 rounded-lg object-cover border border-white/20"
               loading="lazy"
               decoding="async"
-            />
-            <img
+            /><img
               src="src/images/iced coffee.jpg"
               class="w-14 h-14 rounded-lg object-cover border border-white/20"
               loading="lazy"
@@ -293,25 +544,19 @@
             />
           </div>
         </div>
-
         <div class="text-center space-y-6">
           <div
             class="inline-block bg-[#eca965] text-[#3A2416] px-6 py-3 rounded-full text-2xl font-bold pulse"
           >
             20% OFF
           </div>
-
           <h2 class="font-[Poppins] text-4xl">
             Coffee Lovers Deal <i class="fa-brands fa-java text-[#eca965]"></i>
           </h2>
-
           <p class="opacity-90">On your first dine-in or takeaway order</p>
-
           <button class="cta-animated text-lg">Order Now</button>
-
           <p class="text-xs opacity-80">⏰ Hurry! Offer ends soon</p>
         </div>
-
         <div class="space-y-5 text-center md:text-right">
           <img
             src="src/images/chocolate macho.jpg"
@@ -319,22 +564,18 @@
             loading="lazy"
             decoding="async"
           />
-
           <div>
             <p class="text-sm opacity-90">Loved by 1000+ happy customers ❤️</p>
             <p class="text-yellow-400 text-sm">★★★★★ Rated Café</p>
           </div>
-
           <div
             class="flex justify-center md:justify-end gap-4 text-xs opacity-80"
           >
-            <span>☕ Premium Beans</span>
-            <span>🏆 Top Rated</span>
+            <span>☕ Premium Beans</span><span>🏆 Top Rated</span>
           </div>
         </div>
       </div>
     </section>
-
     <section class="py-20 bg-[#7c401b]/20">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-14">
@@ -345,7 +586,6 @@
             Real experiences from our happy coffee lovers ☕
           </p>
         </div>
-
         <div class="grid md:grid-cols-3 gap-8 font-[Inter]">
           <div
             class="bg-white p-6 rounded-xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition duration-300"
@@ -363,21 +603,16 @@
                 <p class="text-sm text-gray-500">Regular Customer</p>
               </div>
             </div>
-
             <p class="text-gray-700 mb-4">
-              “Absolutely love the ambience and the coffee quality. A perfect
-              place to relax after work.”
+              "Absolutely love the ambience and the coffee quality. A perfect
+              place to relax after work."
             </p>
-
             <div class="text-yellow-500">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
             </div>
           </div>
-
           <div
             class="bg-white p-6 rounded-xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition duration-300"
           >
@@ -394,21 +629,16 @@
                 <p class="text-sm text-gray-500">Student</p>
               </div>
             </div>
-
             <p class="text-gray-700 mb-4">
-              “Coffee Hub is my go-to place for studying. The iced coffee is
-              super refreshing!”
+              "Coffee Hub is my go-to place for studying. The iced coffee is
+              super refreshing!"
             </p>
-
             <div class="text-yellow-500">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
             </div>
           </div>
-
           <div
             class="bg-white p-6 rounded-xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition duration-300"
           >
@@ -425,34 +655,27 @@
                 <p class="text-sm text-gray-500">Coffee Enthusiast</p>
               </div>
             </div>
-
             <p class="text-gray-700 mb-4">
-              “Great service, premium coffee, and very friendly staff. Highly
-              recommended for coffee lovers.”
+              "Great service, premium coffee, and very friendly staff. Highly
+              recommended for coffee lovers."
             </p>
-
             <div class="text-yellow-500">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
             </div>
           </div>
         </div>
-
         <div class="text-center mt-12">
           <p class="text-lg font-medium">⭐ 4.9/5 Average Rating</p>
           <p class="text-sm text-gray-600">Based on 1000+ customer reviews</p>
         </div>
       </div>
     </section>
-
     <section id="gallery" class="py-20 bg-[#7c401b]/20">
       <h3 class="font-[Poppins] text-3xl text-center font-semibold mb-10">
         Coffee Hub Through the Lens
       </h3>
-
       <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
         <img
           src="src/images/gallery1.jpg"
@@ -460,15 +683,13 @@
           loading="lazy"
           decoding="async"
           alt="coffee marketing"
-        />
-        <img
+        /><img
           src="src/images/gallery2.jpg"
           class="gallery-img"
           loading="lazy"
           decoding="async"
           alt="peaceful environment"
-        />
-        <img
+        /><img
           src="src/images/gallery3.jpg"
           class="gallery-img"
           loading="lazy"
@@ -477,39 +698,38 @@
         />
       </div>
     </section>
-
     <section class="py-20 bg-[#7c401b]/30">
       <h3 class="font-[Poppins] text-3xl text-center mb-4">
         Stay Connected <i class="fa-brands fa-java text-[#3A2416]"></i>
       </h3>
       <p class="text-center mb-6">Subscribe for offers & updates</p>
-
       <div class="flex justify-center">
         <input
+          id="newsletterEmail"
           type="email"
           placeholder="Enter your email"
-          class="px-4 py-2 rounded-l-md outline-none"
-        />
-        <button class="cta-animated rounded-l-none">Subscribe</button>
+          class="px-4 py-2 rounded-l-md outline-none w-64"
+          required
+        /><button id="subscribeBtn" class="cta-animated rounded-l-none">
+          Subscribe
+        </button>
       </div>
     </section>
-
-    <footer class="bg-[#3A2416] text-white py-10">
+    <footer id="contact" class="bg-[#3A2416] text-white py-10">
       <div class="max-w-7xl mx-auto px-6">
         <div
           class="grid md:grid-cols-4 gap-8 items-center text-center md:text-left"
         >
           <div>
-            <a href="#">
-              <h4 class="font-[Pacifico] text-2xl mb-2">
+            <a href="#"
+              ><h4 class="font-[Pacifico] text-2xl mb-2">
                 <i class="fa-brands fa-java text-[#eca965]"></i> Coffee Hub
-              </h4>
-            </a>
+              </h4></a
+            >
             <p class="text-sm opacity-80">
               Made for true coffee lovers. Brewed with passion.
             </p>
           </div>
-
           <div>
             <h4 class="font-semibold mb-3">Quick Links</h4>
             <ul class="space-y-1 text-sm opacity-90">
@@ -523,70 +743,56 @@
               </li>
             </ul>
           </div>
-
           <div>
             <h4 class="font-semibold mb-3">Contact</h4>
             <ul class="flex flex-col space-y-2 text-sm opacity-90">
-              <a href="tel:+917010160220">
-                <li
+              <a href="tel:+917010160220"
+                ><li
                   class="flex items-center justify-center md:justify-start gap-2"
                 >
-                  <i class="fa-solid fa-phone text-[#eca965]"></i>
-                  +91 7010160220
-                </li>
-              </a>
-              <a href="mailto:arsathnoor2005@gmail.com">
-                <li
+                  <i class="fa-solid fa-phone text-[#eca965]"></i> +91
+                  7010160220
+                </li></a
+              ><a href="mailto:arsathnoor2005@gmail.com"
+                ><li
                   class="flex items-center justify-center md:justify-start gap-2"
                 >
                   <i class="fa-solid fa-envelope text-[#eca965]"></i>
                   coffeehub@gmail.com
-                </li>
-              </a>
-              <a href="#">
-                <li
+                </li></a
+              ><a href="#"
+                ><li
                   class="flex items-center justify-center md:justify-start gap-2"
                 >
                   <i class="fa-solid fa-location-dot text-[#eca965]"></i>
                   Palayamkottai,Tirunelveli
-                </li>
-              </a>
+                </li></a
+              >
             </ul>
           </div>
-
           <div>
             <h4 class="font-semibold mb-3">Follow Us On</h4>
-
             <div class="flex justify-center md:justify-start gap-4 text-xl">
               <a
                 href="https://www.youtube.com"
                 target="_blank"
                 class="hover:text-red-500 transition"
-              >
-                <i class="fa-brands fa-youtube"></i>
-              </a>
-
-              <a
+                ><i class="fa-brands fa-youtube"></i></a
+              ><a
                 href="https://www.facebook.com"
                 target="_blank"
                 class="hover:text-blue-500 transition"
-              >
-                <i class="fa-brands fa-facebook"></i>
-              </a>
-
-              <a
+                ><i class="fa-brands fa-facebook"></i></a
+              ><a
                 href="https://www.instagram.com/__arsath_03__/"
                 target="_blank"
                 class="hover:text-pink-500 transition"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
             </div>
-
             <p class="text-sm opacity-80 mt-3">Stay connected with us</p>
           </div>
         </div>
-
         <div
           class="text-center text-sm opacity-70 mt-8 border-t border-white/20 pt-4"
         >
@@ -594,5 +800,98 @@
         </div>
       </div>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init("LqFb3x5cZ-sMAM3s9");
+        console.log("EmailJS initialized");
+      });
+
+      function showMessage(message, isSuccess = true) {
+        const toast = document.createElement("div");
+        toast.className = `toast-message ${isSuccess ? "success" : "error"}`;
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        setTimeout(() => {
+          toast.remove();
+        }, 3000);
+      }
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+
+      document
+        .getElementById("subscribeBtn")
+        .addEventListener("click", async function () {
+          const emailInput = document.getElementById("newsletterEmail");
+          const email = emailInput.value.trim();
+
+          if (!validateEmail(email)) {
+            showMessage("Please enter a valid email address!", false);
+            return;
+          }
+
+          const subscribeBtn = document.getElementById("subscribeBtn");
+          const originalText = subscribeBtn.textContent;
+          subscribeBtn.textContent = "Sending...";
+          subscribeBtn.disabled = true;
+
+          // IMPORTANT: Use 'to_email' as the parameter name (this is what EmailJS expects)
+          const templateParams = {
+            to_email: email,
+            from_name: "Coffee Hub",
+            message: `Thank you for subscribing to Coffee Hub's newsletter! 🎉\n\nYou'll now receive exclusive offers, new menu updates, and coffee tips directly in your inbox.\n\nUse code WELCOME20 for 20% off your next order!\n\nStay caffeinated,\nCoffee Hub Team`,
+            user_email: email,
+          };
+
+          try {
+            const response = await emailjs.send(
+              "service_qtkepcd",
+              "template_w9bg7ih",
+              templateParams,
+            );
+
+            if (response.status === 200) {
+              showMessage(
+                "✅ Subscribed successfully! Check your inbox for confirmation.",
+                true,
+              );
+              emailInput.value = "";
+            } else {
+              showMessage("❌ Failed to subscribe. Please try again.", false);
+            }
+          } catch (error) {
+            console.error("EmailJS Error:", error);
+
+            // Provide specific error messages based on the error
+            let errorMsg = "❌ ";
+            if (error.text) {
+              if (error.text.includes("recipients address is empty")) {
+                errorMsg +=
+                  "Email address is empty. Please enter a valid email.";
+              } else if (error.text.includes("Service not found")) {
+                errorMsg +=
+                  "Service ID is incorrect. Please check your EmailJS dashboard.";
+              } else if (error.text.includes("Template not found")) {
+                errorMsg +=
+                  "Template ID is incorrect. Please check your EmailJS dashboard.";
+              } else if (error.text.includes("Invalid API key")) {
+                errorMsg +=
+                  "Public Key is incorrect. Please check your EmailJS dashboard.";
+              } else {
+                errorMsg += error.text;
+              }
+            } else {
+              errorMsg +=
+                "Please verify your EmailJS setup (Service ID, Template ID, and Public Key).";
+            }
+            showMessage(errorMsg, false);
+          } finally {
+            subscribeBtn.textContent = originalText;
+            subscribeBtn.disabled = false;
+          }
+        });
+    </script>
   </body>
 </html>
